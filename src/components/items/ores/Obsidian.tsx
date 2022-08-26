@@ -1,6 +1,6 @@
 import React from "react";
 
-import Item from "../../Item";
+import Item from "../Item";
 import obsidianSrc from "../../../assets/obsidian.webp";
 
 export const Obsidian: React.FC = () => {

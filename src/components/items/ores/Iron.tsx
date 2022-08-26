@@ -1,6 +1,6 @@
 import React from "react";
 
-import Item from "../../Item";
+import Item from "../Item";
 import ironSrc from "../../../assets/iron.webp";
 
 export const Iron: React.FC = () => {

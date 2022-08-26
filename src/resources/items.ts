@@ -37,26 +37,26 @@ export const alloy = {
   VIRENIUM,
 };
 
-const Type = {
+export const type = {
   ORE: "ore",
   ALLOY: "alloy",
 };
 
 const items = {
-  [DIAMOND]: { name: DIAMOND, element: Ores.Diamond, type: Type.ORE },
-  [IRON]: { name: IRON, element: Ores.Iron, type: Type.ORE },
-  [GOLD]: { name: GOLD, element: Ores.Gold, type: Type.ORE },
-  [EMERALD]: { name: EMERALD, element: Ores.Emerald, type: Type.ORE },
-  [COPPER]: { name: COPPER, element: Ores.Copper, type: Type.ORE },
-  [OBSIDIAN]: { name: OBSIDIAN, element: Ores.Obsidian, type: Type.ORE },
-  [NETHER_SCRAP]: { name: NETHER_SCRAP, element: Ores.NetherScrap, type: Type.ORE },
-  [NETHERITE]: { name: NETHERITE, element: Ores.Netherite, type: Type.ORE },
-  [NETHER_STAR]: { name: NETHER_STAR, element: Ores.NetherStar, type: Type.ORE },
-  [BRONZE]: { name: BRONZE, element: Alloy.Bronze, type: Type.ALLOY },
-  [STEEL]: { name: STEEL, element: Alloy.Steel, type: Type.ALLOY },
-  [INVAR]: { name: INVAR, element: Alloy.Invar, type: Type.ALLOY },
-  [TITANE]: { name: TITANE, element: Alloy.Titan, type: Type.ALLOY },
-  [VIRENIUM]: { name: VIRENIUM, element: Alloy.Verinium, type: Type.ALLOY },
+  [DIAMOND]: { name: DIAMOND, element: Ores.Diamond, type: type.ORE },
+  [IRON]: { name: IRON, element: Ores.Iron, type: type.ORE },
+  [GOLD]: { name: GOLD, element: Ores.Gold, type: type.ORE },
+  [EMERALD]: { name: EMERALD, element: Ores.Emerald, type: type.ORE },
+  [COPPER]: { name: COPPER, element: Ores.Copper, type: type.ORE },
+  [OBSIDIAN]: { name: OBSIDIAN, element: Ores.Obsidian, type: type.ORE },
+  [NETHER_SCRAP]: { name: NETHER_SCRAP, element: Ores.NetherScrap, type: type.ORE },
+  [NETHERITE]: { name: NETHERITE, element: Ores.Netherite, type: type.ORE },
+  [NETHER_STAR]: { name: NETHER_STAR, element: Ores.NetherStar, type: type.ORE },
+  [BRONZE]: { name: BRONZE, element: Alloy.Bronze, type: type.ALLOY },
+  [STEEL]: { name: STEEL, element: Alloy.Steel, type: type.ALLOY },
+  [INVAR]: { name: INVAR, element: Alloy.Invar, type: type.ALLOY },
+  [TITANE]: { name: TITANE, element: Alloy.Titan, type: type.ALLOY },
+  [VIRENIUM]: { name: VIRENIUM, element: Alloy.Verinium, type: type.ALLOY },
 };
 
 export default items;

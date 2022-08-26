@@ -1,6 +1,6 @@
 import React from "react";
 
-import Item from "../../Item";
+import Item from "../Item";
 import netheriteSrc from "../../../assets/netherite.webp";
 
 export const Netherite: React.FC = () => {

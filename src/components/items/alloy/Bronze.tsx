@@ -1,8 +1,7 @@
 import React from "react";
 
 import Item from "../Item";
-import bronzeSrc from "../../../assets/bronze.webp";
 
 export const Bronze: React.FC = () => {
-  return <Item src={bronzeSrc} alt="Bronze ingots" />;
+  return <Item src="/images/items/bronze.webp" alt="Bronze ingots" />;
 };

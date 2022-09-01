@@ -4,6 +4,8 @@ import classnames from "classnames";
 import items, { type } from "./resources/items";
 import * as Ores from "./components/items/ores";
 import * as Alloys from "./components/items/alloy";
+import ItemSelector from "./components/ItemSelector";
+import { capitalize } from "./utils/strings";
 
 const App = () => {
   const [activeAlloy, setActiveAlloy] = useState<any>();
@@ -14,10 +16,10 @@ const App = () => {
       <main className="mx-14 my-10">
         <div className="grid grid-cols-6 bg-slate-100 w-full gap-3 px-5 py-2">
           <div className="col-span-1">
-            <div className="mb-3 w-fit">
-              <h2 className="text-xl font-medium">Chose your Alloy</h2>
+            <div className="mt-5">
+              <h2 className="text-xl text-center  font-medium">Chose your Alloy</h2>
             </div>
-            <div className="flex flex-col space-y-4 items-center justify-center">
+            <div className="flex flex-col space-y-4 h-full items-center justify-center">
               {Object.entries(items)
                 .filter(([, item]) => item.type === type.ALLOY)
                 .map(([key, item], index) => (
@@ -31,12 +33,17 @@ const App = () => {
                     )}
                     onClick={() => setActiveAlloy(key)}
                   >
-                    <item.element />
+                    <div>
+                      <p className="text-center font-minecraft">
+                        {capitalize(item.name)}
+                      </p>
+                      <item.element />
+                    </div>
                   </div>
                 ))}
             </div>
           </div>
-          <div className="col-span-1 flex items-center bg-red-">
+          <div className="col-span-1 flex items-center">
             <div>
               <div>
                 <h2>Quantité :</h2>
@@ -46,46 +53,24 @@ const App = () => {
                   className="outline-0 w-16 text-2xl font-medium"
                   type="number"
                   value={quantity}
-                  onChange={(event) => setQuantity(+event.currentTarget.value)}
+                  onChange={(event) => setQuantity(+event.currentTarget.value as number)}
                 />
               </div>
             </div>
           </div>
           <div className="col-span-3 flex flex-col justify-evenly space-y-10">
-            <div className="grid grid-cols-5 gap-10">
-              {Object.entries(items)
-                .filter(([, item]) => item.type === type.ORE)
-                .map(([key, item], index) => (
-                  <div
-                    key={index}
-                    className="p-5 border-2 w-fit border-red-400 bg-red-50 rounded flex flex-col items-center space-y-3"
-                  >
-                    <item.element />
-                    <div className="text-center text-slate-900">
-                      <p>
-                        Need : {32} ({32 / 64})
-                      </p>
-                      <p>Actual : {0}</p>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-5 gap-x-5 gap-y-3">
+              {Object.values(items)
+                .filter((item) => item.type === type.ORE)
+                .map((item, index) => (
+                  <ItemSelector key={index} item={item} />
                 ))}
             </div>
-            <div className="grid grid-cols-5 gap-10">
+            <div className="grid grid-cols-5 gap-x-5 gap-y-3">
               {Object.entries(items)
                 .filter(([, item]) => item.type === type.ALLOY)
-                .map(([key, item], index) => (
-                  <div
-                    key={index}
-                    className="p-5 border-2 w-fit border-red-400 bg-red-50 rounded flex flex-col items-center space-y-3"
-                  >
-                    <item.element />
-                    <div className="text-center text-slate-900">
-                      <p>
-                        Need : {32} ({32 / 64})
-                      </p>
-                      <p>Actual : {0}</p>
-                    </div>
-                  </div>
+                .map(([, item], index) => (
+                  <ItemSelector key={index} item={item} />
                 ))}
             </div>
           </div>
